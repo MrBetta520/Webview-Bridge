@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebView Bridge Example</title>
+    <script type="text/javascript">
+        // Function to call the Android showToast function
+        function callAndroidFunction() {
+            AndroidBridge.showToast("Hello from JavaScript!");
+        }
+
+        // Function to send data from JavaScript to Android
+        function sendData() {
+            const data = document.getElementById("dataInput").value;
+            AndroidBridge.sendDataToAndroid(data);
+        }
+    </script>
+</head>
+<body>
+    <h1>WebView Bridge Example</h1>
+    <button onclick="callAndroidFunction()">Call Android Function</button>
+    <br><br>
+    <input type="text" id="dataInput" placeholder="Enter data">
+    <button onclick="sendData()">Send Data to Android</button>
+</body>
+</html>
